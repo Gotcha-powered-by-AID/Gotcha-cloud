@@ -1,0 +1,12 @@
+Flask
+boto3
+pymysql
+opencv-python
+paddlepaddle
+paddleocr
+ultralytics
+tensorflow
+scipy
+Pillow
+numpy
+requests
