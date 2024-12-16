@@ -1,6 +1,6 @@
 # Gotcha Cloud Service
 
-Gotcha는 **AI 기반 불법주정차 자동 신고 서비스**로, 클라우드 인프라를 통해 이미지 처리, 메타데이터 분석 및 데이터베이스 관리를 수행합니다.  
+Gotcha는 **도로안전 개선을 위한 AI 기반 블랙박스 영상 속 불법주정차 자동 신고 클라우드 서비스**로, 클라우드 인프라를 통해 이미지 처리, 메타데이터 분석 및 데이터베이스 관리를 수행합니다.  
 
 ---
 
@@ -89,10 +89,18 @@ RDS_PASSWORD=your-password
 ```
 
 ### 2. Lambda 배포
+#### S3 트리거 Lambda
 ```bash
 cd lambda/s3-triggered-lambda
 zip -r function.zip .
 aws lambda update-function-code --function-name S3TriggeredFunction --zip-file fileb://function.zip
+```
+
+#### Temporary to Final Lambda
+```bash
+cd lambda/temporary-to-final-lambda
+zip -r function.zip .
+aws lambda update-function-code --function-name TemporaryToFinalLambda --zip-file fileb://function.zip
 ```
 
 ### 3. EC2 서버 실행
