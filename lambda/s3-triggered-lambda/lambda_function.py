@@ -63,7 +63,7 @@ def lambda_handler(event, context):
     s3_url = f's3://{read_bucket}/{key}'
     metadata['image_url'] = s3_url
 
-    ec2_url = f'http://43.203.171.209:5000/process_metadata'
+    ec2_url = f'http://<your-public-ip>:5000/process_metadata'
     response = requests.post(ec2_url, json=metadata)
 
     return {
