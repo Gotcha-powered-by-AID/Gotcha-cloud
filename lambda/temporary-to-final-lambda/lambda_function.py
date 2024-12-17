@@ -96,7 +96,7 @@ def lambda_handler(event, context):
             report_id, first_cropped_url, second_cropped_url = final_record
             
             # 배경 분석 API 호출
-            ec2_url = f'http://172.31.31.189:5000/compare_background'
+            ec2_url = f'http://<your-private-ip>:5000/compare_background'
             try:
                 response = requests.post(ec2_url, json={
                     "first_cropped_url": first_cropped_url,
